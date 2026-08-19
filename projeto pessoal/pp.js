@@ -22,22 +22,20 @@ var callback = function (request, response){
 
         //verifica end-points
         if(parts.path == "/"){
-            response.end("pagina principal")
+            response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+            readFile(response, "index.html");
 
         }
 
 
-        else if(parts.path == "/rota1"){
-            response.end("pagina rota1")
+        else if(parts.path == "/gabriely"){
+            response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+            response.end("gabriely.html")
         }
 
-        else if(parts.path == "/rota2"){
-            response.end("pagina rota 2")
-        }
-
-        else if(parts.path == "/imagem/morango"){
-            response.writeHead(200, {"Content-type":"image/jpeg"});
-            readFile(response, "morango.jpg")
+        else if(parts.path == "/luciano"){
+            response.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+            response.end("luciano.html")
         }
 
         else{
